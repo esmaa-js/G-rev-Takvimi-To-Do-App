@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="to-do">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="web geliştirme" />
+  <meta name="author" content="Esma" />
+  <meta charset="UTF-8" />
+
+  <title>Görev Takvimi & To-Do App</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- Sidebar Menü -->
+    <aside id="sidebar">
+      <canvas id="sidebar-canvas"></canvas>
+      <h2 class="menutext">Menü</h2>
+      <nav>
+        <ul>
+          <li><button class="menu-btn active" data-page="calendar">Takvim</button></li>
+          <li><button class="menu-btn" data-page="notes">Notlar</button></li>
+          <li><button class="menu-btn" data-page="archive">Arşiv</button></li>
+          <li><button class="menu-btn" data-page="trash">Çöp Kutusu</button></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Ana İçerik -->
+    <main id="main-content">
+
+      <!-- Takvim Sayfası -->
+      <section id="calendar-page" class="page active">
+        <header>
+          <button id="prev-month">‹</button>
+          <div id="month-year"></div><button id="next-month">›</button>
+        </header>
+
+        <div id="calendar-weekdays" class="calendar-days"></div>
+        <div id="calendar" class="calendar-days"></div>
+
+        <h3 id="selected-date-header"></h3>
+
+        <div id="tasks-container">
+          <div class="tasks-columns">
+            <div class="todo-column">
+              <h3>Yapılacaklar</h3>
+              <ul id="todo-list-calendar"></ul>
+              <div class="task-input">
+                <input id="task-input-calendar" type="text" placeholder="Yeni görev ekle..." />
+                <button id="add-task-btn-calendar">Ekle</button>
+              </div>
+            </div>
+
+            <div class="completed-column">
+              <h3>Tamamlananlar</h3>
+              <ul id="completed-list-calendar"></ul>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Notlar Sayfası -->
+      <section id="notes-page" class="page">
+        <div class="notes-container">
+
+          <!-- Sol: Kategori ve Görev Ekleme (alt alta) -->
+          <div class="left-column">
+            <div class="category">
+              <h3>Yeni Kategori Ekle</h3>
+              <input type="text" id="new-category-input" placeholder="Kategori adı" />
+              <button id="add-category-btn">Kategori Ekle</button>
+
+              <!-- Kategori listesi (sil, arşivle butonlu) -->
+              <div id="category-list-container"></div>
+            </div>
+
+            <div class="note-add">
+              <h3>Yeni Görev Ekle</h3>
+              <select id="category-select" aria-label="Kategori seçiniz">
+                <!-- Kategoriler JS ile gelecek -->
+              </select>
+              <input type="text" id="new-task-input" placeholder="Görev metni" />
+              <button id="add-task-btn">Görev Ekle</button>
+            </div>
+          </div>
+
+          <!-- Orta: Kategori bazlı yapılacaklar -->
+          <div class="todo-lists">
+            <h3>Yapılacaklar</h3>
+            <div id="todo-categories">
+              <!-- Kategori bazlı yapılacaklar listeleri JS ile gelecek -->
+            </div>
+          </div>
+
+          <!-- Sağ: Tamamlananlar -->
+          <div class="completed-list">
+            <h3>Tamamlananlar</h3>
+            <ul id="completed-tasks-list" class="task-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Arşiv Sayfası -->
+      <section id="archive-page" class="page">
+        <h3>Arşiv</h3>
+        <ul id="archive-list" class="task-list"></ul>
+      </section>
+
+      <!-- Çöp Kutusu Sayfası -->
+      <section id="trash-page" class="page">
+        <h3>Çöp Kutusu</h3>
+        <ul id="trash-list" class="task-list"></ul>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="notes.js"></script>
+</body>
+
+</html>

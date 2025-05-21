@@ -1,0 +1,512 @@
+/* ----------- TEMEL MEDYA SORGULARI ----------- */
+
+/* 1. Küçük telefonlar: max 480px */
+@media only screen and (max-width: 480px) {
+  body, #app {
+    flex-direction: column;
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Yatay taşmayı engelle */
+  }
+
+  /* Sidebar üstte yatay menü */
+  #sidebar {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: #004aad;
+    order: 1;
+    box-sizing: border-box;
+  }
+  #sidebar h2.menutext {
+    display: none;
+  }
+  #sidebar nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  #sidebar nav ul li {
+    margin: 0;
+    flex-shrink: 1;
+  }
+  .menu-btn {
+    font-size: 13px;
+    padding: 7px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
+  }
+
+  /* Ana içerik full genişlik */
+  #main-content {
+    flex-grow: 1;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    order: 2;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* Notlar sayfası sütunları dikey */
+  .notes-container {
+    flex-direction: column;
+    gap: 12px;
+    overflow-x: hidden;
+  }
+  .left-column,
+  .todo-lists,
+  .completed-list {
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin-left: 0 !important;
+    padding: 12px 15px;
+    box-sizing: border-box;
+  }
+
+  /* Listelerde scroll aktif, max-height sınırlandı */
+  #completed-list-calendar,
+  #todo-list-calendar,
+  #category-list-container {
+    max-height: 200px !important;
+    overflow-y: auto !important;
+  }
+
+  /* Takvim: günler yatay ve sıralı, 7 kolon */
+  #calendar-weekdays,
+  #calendar {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 6px;
+    width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+  }
+  .calendar-cell {
+    padding: 14px 6px;
+    font-size: 14px;
+    min-width: 40px;
+    text-align: center;
+    border-radius: 6px;
+    user-select: none;
+  }
+  .calendar-cell.empty {
+    background: transparent;
+    border: none;
+    cursor: default;
+  }
+
+  /* Header */
+  header {
+    margin-bottom: 0.6rem;
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #month-year {
+    font-size: 1.2rem;
+    flex-grow: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #prev-month,
+  #next-month {
+    font-size: 1.4rem;
+    padding: 6px 10px;
+    min-width: 32px;
+  }
+
+  /* Takvim altındaki görevler container */
+  #tasks-container {
+    padding: 0 8px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  /* Görev listeleri scroll ile sınırlandırıldı */
+  #todo-list-calendar,
+  #completed-list-calendar {
+    max-height: 140px;
+    overflow-y: auto;
+  }
+
+  /* Seçilen tarih başlığı */
+  #selected-date-header {
+    font-size: 1rem;
+    margin: 10px 0 6px 0;
+    text-align: center;
+  }
+
+  /* Görev ekleme kutusu dikey */
+  .task-input {
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  .task-input input,
+  .task-input button {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Task item ve butonlar büyütüldü */
+  .task-item {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+  .task-actions button {
+    padding: 8px 12px;
+    font-size: 18px;
+  }
+}
+
+/* 2. Orta boy telefon ve küçük tablet: 481px - 768px */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  body, #app {
+    flex-direction: column;
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  #sidebar {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: #004aad;
+    order: 1;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  #sidebar h2.menutext {
+    display: none;
+  }
+  #sidebar nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+  }
+  #sidebar nav ul li {
+    margin: 0;
+    flex-shrink: 1;
+  }
+  .menu-btn {
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
+  }
+  #main-content {
+    flex-grow: 1;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    order: 2;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .notes-container {
+    flex-direction: column;
+    gap: 16px;
+    overflow-x: hidden;
+  }
+  .left-column,
+  .todo-lists,
+  .completed-list {
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin-left: 0 !important;
+    padding: 15px 20px;
+    box-sizing: border-box;
+  }
+
+  #calendar-weekdays,
+  #calendar {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+  .calendar-cell {
+    padding: 14px 6px;
+    font-size: 15px;
+    min-width: 45px;
+    text-align: center;
+    border-radius: 6px;
+    user-select: none;
+  }
+  .calendar-cell.empty {
+    background: transparent;
+    border: none;
+    cursor: default;
+  }
+
+  header {
+    margin-bottom: 1rem;
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #month-year {
+    font-size: 1.4rem;
+    flex-grow: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #prev-month,
+  #next-month {
+    font-size: 1.6rem;
+    padding: 7px 14px;
+    min-width: 36px;
+  }
+
+  #tasks-container {
+    padding: 0 10px;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+
+  #todo-list-calendar,
+  #completed-list-calendar {
+    max-height: 160px;
+    overflow-y: auto;
+  }
+
+  #selected-date-header {
+    font-size: 1.1rem;
+    margin: 12px 0 8px 0;
+    text-align: center;
+  }
+
+  .task-input {
+    flex-direction: row;
+    gap: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .task-input input,
+  .task-input button {
+    width: auto;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .task-item {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+  .task-actions button {
+    padding: 6px 8px;
+    font-size: 16px;
+  }
+}
+
+/* 3. Büyük tablet ve üstü: 769px ve üstü */
+@media only screen and (min-width: 769px) {
+  body, #app {
+    flex-direction: row;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  #sidebar {
+    width: 200px;
+    padding: 1rem;
+    display: block;
+    order: 0;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+  #sidebar h2.menutext {
+    display: block;
+  }
+  #sidebar nav ul {
+    display: block;
+    padding: 0;
+  }
+  #sidebar nav ul li {
+    margin-bottom: 10px;
+  }
+  .menu-btn {
+    font-size: 16px;
+    padding: 10px;
+    white-space: normal;
+    max-width: none;
+    text-overflow: initial;
+    overflow: visible;
+  }
+  #main-content {
+    flex-grow: 1;
+    padding: 1rem;
+    width: auto;
+    order: 1;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .notes-container {
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: hidden;
+  }
+  .left-column {
+    width: 260px;
+  }
+  .todo-lists,
+  .completed-list {
+    flex: 0 0 350px;
+    max-height: 450px;
+    overflow-y: auto;
+    margin-left: 100px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+  }
+
+  #calendar-weekdays,
+  #calendar {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .calendar-cell {
+    padding: 14px 0;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 6px;
+  }
+
+  header {
+    margin-bottom: 1rem;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #month-year {
+    font-size: 1.6rem;
+    flex-grow: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #prev-month,
+  #next-month {
+    font-size: 1.8rem;
+    padding: 8px 16px;
+    min-width: 40px;
+  }
+
+  #tasks-container {
+    padding: 0;
+    max-height: 350px;
+    overflow-y: auto;
+  }
+
+  #todo-list-calendar,
+  #completed-list-calendar {
+    max-height: 180px;
+    overflow-y: auto;
+  }
+
+  #selected-date-header {
+    font-size: 1.2rem;
+    margin: 14px 0 10px 0;
+    text-align: center;
+  }
+
+  .task-input {
+    flex-direction: row;
+    gap: 12px;
+    padding: 0;
+  }
+  .task-input input,
+  .task-input button {
+    width: auto;
+    font-size: 17px;
+    padding: 10px;
+  }
+
+  .task-item {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+  .task-actions button {
+    padding: 8px 12px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #tasks-container .tasks-columns {
+    flex-direction: column;
+  }
+
+  #tasks-container .todo-column,
+  #tasks-container .completed-column {
+    max-height: none;
+    overflow: visible;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* task-input içindeki input ve button blok seviyesinde, tam genişlikte olsun */
+  #tasks-container .todo-column .task-input {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #tasks-container .todo-column .task-input input,
+  #tasks-container .todo-column .task-input button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Butonun sağa kaymasını önle */
+  #tasks-container .todo-column .task-input button {
+    margin-left: 0; /* Varsayılan margin kaldırıldı */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #sidebar-canvas {
+    display: none !important;
+  }
+}
