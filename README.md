@@ -64,7 +64,7 @@ Tüm veriler tarayıcıdaki **LocalStorage** içinde saklanır. Bu sayede uygula
 
 Kod yapısı basit ve yorumludur. Projeyi geliştirmek istersen:
 
-- Yeni özellik eklemek için `script.js` veya `notes.js` dosyalarını düzenleyebilirsin.
+- Yeni özellik eklemek için `script_enter.js` veya `notes_enter.js` dosyalarını düzenleyebilirsin.
 - Yeni tema veya stil değişiklikleri için `style.css` ve `responsive.css` dosyalarını kullanabilirsin.
 
 ## 📬 İletişim
