@@ -33,8 +33,8 @@ to-do-app/
 ├── index.html          # Ana HTML yapısı
 ├── style.css           # Genel stil dosyası
 ├── responsive.css      # Responsive (mobil/tablet) uyumluluklar
-├── script.js           # Takvim ve genel görev fonksiyonları
-├── notes.js            # Notlar/Kategoriler sayfası işlevleri
+├── script_enter.js     # Takvim ve genel görev fonksiyonları
+├── notes_enter.js      # Notlar/Kategoriler sayfası işlevleri
 └── README.md           # Proje dokümantasyonu
 ```
 
